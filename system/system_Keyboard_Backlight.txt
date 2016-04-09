@@ -1,0 +1,59 @@
+#Maintained by: 14mian for: Asus backlight
+
+into device label ATKD insert
+begin
+Name (BOFF, Zero)\n
+            Method (SKBL, 1, NotSerialized)\n
+            {\n
+                If (Or (LEqual (Arg0, 0xED), LEqual (Arg0, 0xFD)))\n
+                {\n
+                    If (And (LEqual (Arg0, 0xED), LEqual (BOFF, 0xEA)))\n
+                    {\n
+                        Store (Zero, Local0)\n
+                        Store (Arg0, BOFF)\n
+                    }\n
+                    Else\n
+                    {\n
+                        If (And (LEqual (Arg0, 0xFD), LEqual (BOFF, 0xFA)))\n
+                        {\n
+                            Store (Zero, Local0)\n
+                            Store (Arg0, BOFF)\n
+                        }\n
+                        Else\n
+                        {\n
+                            Return (BOFF)\n
+                        }\n
+                    }\n
+                }\n
+                Else\n
+                {\n
+                    If (Or (LEqual (Arg0, 0xEA), LEqual (Arg0, 0xFA)))\n
+                    {\n
+                        Store (KBLV, Local0)\n
+                        Store (Arg0, BOFF)\n
+                    }\n
+                    Else\n
+                    {\n
+                        Store (Arg0, Local0)\n
+                        Store (Arg0, KBLV)\n
+                    }\n
+                }\n
+ 
+                Store (DerefOf (Index (PWKB, Local0)), Local1)\n
+                ^^PCI0.LPCB.EC0.WRAM (0x04B1, Local1) // Haswell/Ivy\n
+                ^^PCI0.LPCB.EC0.WRAM (0x044B, Local1) // Sandy/Ivy\n
+                Return (Local0)\n
+            }\n
+ 
+            Method (GKBL, 1, NotSerialized)\n
+            {\n
+                If (LEqual (Arg0, 0xFF))\n
+                {\n
+                    Return (BOFF)\n
+                }\n
+ 
+                Return (KBLV)\n
+            }\n
+end;
+
+
