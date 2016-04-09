@@ -1,3 +1,4 @@
+[a] --> Readme	graphics/readme.txt
 [syn] --> Various Syntax Error Fixes	NullPatch.txt
 [syn] Fix ADBG Error	syntax/fix_ADBG.txt
 [syn] Fix PARSEOP_ZERO Error	syntax/fix_PARSEOP_ZERO.txt
@@ -13,6 +14,7 @@
 [gfx0] Disable from _INI (SSDT)	graphics/graphics_INI-disable.txt
 [gfx0] Disable from _REG (DSDT)	graphics/graphics_REG-disable.txt
 [gfx0] Disable/Enable on _WAK/_PTS (DSDT)	graphics/graphics_PTS_WAK-disable.txt
+[gfx0] Remove EC in _OFF (SSDT)	graphics/graphics_Remove_EC_in_OFF.txt
 [usb] --> USB (ECHI) Patches	NullPatch.txt
 [usb] USB3 _PRW 0x6D (instant wake)	usb/usb_prw_0x6d_xhc.txt
 [bat] --> Battery Patches	NullPatch.txt

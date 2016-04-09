@@ -13,8 +13,7 @@ begin
 //added to turn nvidia/radeon off\n
 If (LAnd(LEqual(Arg0,3),LEqual(Arg1,1)))\n
 {\n
-    External(\_SB.PCI0.PEG0.PEGP._OFF, MethodObj)\n
-    \_SB.PCI0.PEG0.PEGP._OFF()\n
+    \_SB.PCI0.LPCB.EC0.SPIN (0x96, Zero)\n
 }\n
 end;
 
