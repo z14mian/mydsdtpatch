@@ -1,3 +1,4 @@
+[a] --> How to patch	a.txt
 [a] --> Readme	graphics/readme.txt
 [syn] --> Various Syntax Error Fixes	NullPatch.txt
 [syn] Fix ADBG Error	syntax/fix_ADBG.txt

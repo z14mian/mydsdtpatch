@@ -1,0 +1,20 @@
+#反编译  
+cd xxxxxxxx 
+iasl -da- dl *.dsl
+#==================================
+#修复错误部分
+#DSDT:Fix ADBG Error
+#     Fix PARSEOP_ZERO Error
+#某个只有一个错误的ssdt：Cleanup/Fix Errors (SSDT)
+#某个有一大堆错误的ssdt：Remove _PSS placeholders
+#==================================
+#补丁部分
+#每个文件都打：Rename GFX0 to IGPU  ——>改核显名字
+#DSDT:Disable from _REG (DSDT)  ——>屏蔽独显
+#     Haswell LPC   ——>开启电源管理
+#     Fix _WAK Arg0 v2   Fix _WAK IAOE  ——>解决睡眠问题
+#SSDT：某个只含\_SB.PCI0且其下级有“IGPU”（改名后）的ssdt，本机为ssdt-7
+#      Brightness fix (Haswell/Broadwell)  ——>亮度补丁
+#—————————————————
+#      某个包含_ini的ssdt，本机为ssdt-8
+#      Disable from _INI (SSDT)
