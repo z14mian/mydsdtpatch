@@ -1,6 +1,6 @@
 #反编译  
-cd xxxxxxxx 
-iasl -da- dl *.dsl
+#  cd xxxxxxxx 
+#  iasl -da- dl *.dsl
 #==================================
 #修复错误部分
 #DSDT:Fix ADBG Error
@@ -18,3 +18,6 @@ iasl -da- dl *.dsl
 #—————————————————
 #      某个包含_ini的ssdt，本机为ssdt-8
 #      Disable from _INI (SSDT)
+#==================================
+#编译
+#   iasl *.dsl
